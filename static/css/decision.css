@@ -4,7 +4,7 @@
 	  }
 
 	  body{
-        background-image: url({{url_for('static', filename='images/background.png')}});
+        background-image: url('https://s3.amazonaws.com/quantimg/background.PNG');
 	  	background-repeat: repeat;
 	  }
 		div.container{
