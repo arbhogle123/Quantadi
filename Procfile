@@ -1,1 +1,1 @@
-web: gunicorn Quantadi:app
+web: gunicorn app:app
