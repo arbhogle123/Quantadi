@@ -4,7 +4,7 @@
 		  text-align: center;
 	  }
 	  body{
-	    background :url({{ url_for('static', filename='images/background.PNG') }}) repeat
+	    background :url('https://s3.amazonaws.com/quantimg/background.PNG') repeat
 	  }
 	  h1{
 	  	display:inline;
