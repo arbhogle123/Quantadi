@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Choose One</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="{{url_for('static', filename='css/decision.css')}}">
+</head>
+<body>
+
+	<header>
+		<img src="{{url_for('static', filename='images/quantiphi.png')}}" alt="logo">
+	</header>
+	
+	<div class="container">
+		<h3>Would you like a tutorial on how the system works?</h3>
+		<form>
+			<button id="yes" type="submit" formaction="{{ url_for('tutorial')}}" title="Navigate to same page">YES, I’D LIKE THAT</button>
+			<button id="no" type="submit" formaction="{{ url_for('home')}}" title="Navigate to voting page">NO, I CAN START</button>
+		</form>	
+	</div>
+</body>
+</html>

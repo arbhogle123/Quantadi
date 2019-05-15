@@ -1,0 +1,52 @@
+
+			* {
+		  box-sizing: border-box;
+		  text-align: center;
+	  }
+	  body{
+	    background :url({{ url_for('static', filename='images/background.PNG') }}) repeat
+	  }
+	  h1{
+	  	display:inline;
+	  	font-family: Marlowe;
+	  	font-weight: lighter;
+	  	font-size: 50px;
+	  }
+		button{
+		    font-weight: 500;
+		    width: auto;
+		    background-color: #20B585;
+		    color: white;
+		    height: auto;
+		    padding: 1.2vw 3vw;
+		}
+		button:hover{
+			background-color: #20DF8F;
+		}
+
+		div.container{
+		    position:fixed;
+			width: 90%;
+			padding: 1% 1%;
+			top: 300px;
+            left: 255px;
+            height:auto;
+            margin-top: -9em;
+            margin-left: -15em
+		}
+		div#button{
+			position: relative;
+			align-self: center;
+			width: fit-content;	;
+			box-shadow: 0 0.5em 1.7em -0.4em;
+			margin: 0 auto;
+		}
+		footer{
+		    position:fixed;
+			margin: 0 auto;
+			bottom:0;
+			text-align:center;
+		    height: 7%;
+		    font-family: Marlowe;
+			font-weight: lighter;
+		}

@@ -1,0 +1,275 @@
+*{
+      box-sizing: border-box;
+      font-family: Marlowe;
+    }
+    header{
+            box-shadow: 0 0.3em 0.6em -0.5em;
+    }
+    div.container{
+      padding: 0 3vw 0vw 3vw;
+    }
+    body{
+      background-image: url({{url_for('static', filename='images/background.png')}});
+      background-repeat:repeat;
+    }
+    h1{
+      display: inline;
+      font-weight: lighter;
+      font-size: 4vw;
+    }
+    h4{
+      display: inline;
+      font-weight: lighter;
+      font-size: 1.4vw;      
+    }
+    h6{
+        font-weight: lighter;
+        font-size: 1vw;
+        text-align: center;
+    }
+    button{
+        font-weight: 500;
+        font-size: 17px;
+        max-width: 100%;
+        background-color: #cccccc;
+        color: white;
+        height: auto;
+        padding: 1.2vw;
+    }
+    #button{
+      position: absolute;
+      top: 6vw;
+      left:5vw;
+      align-self: center;
+      width: fit-content  ;
+      box-shadow: 0 0.5em 1.7em -0.4em;
+      pointer-events: none;
+    }
+    .column {
+      position: relative;
+      display: inline-block;
+      float: left;
+      width: 16.66%;
+      align-content: center;
+      padding: 1vw 0 0 0 ;
+    }
+    .row{
+      border: 1px solid black;
+    }
+    .col-img{
+        max-width: 100%;
+        height: 12vw;
+    }
+    .row:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+  .column1 {
+      float: left;
+      width: 31.334%;
+      align-content: center;
+      padding: 1vw 0 0 0 ;
+      margin: 1%;
+      position: relative;
+    }
+    .row1:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+    .column01{
+      float: left;
+      width: 60%;
+      align-content: center;
+      padding: 1vw 0 0 0 ;
+    }
+    .column02{
+      position: relative;
+      float: left;
+      width: 40%;
+      align-content: center;
+      padding: 1vw 0 0 0 ;
+    }
+  
+    .row0:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+
+    textarea{
+      height: 20vw;
+      width: 100%;
+    }
+
+    form,.column02{
+      visibility: hidden;
+    }
+      .tooltip .tooltiptext {
+        visibility: hidden;
+        width: auto;
+        background-color: black;
+        color: #fff;
+        text-align: center;
+        padding: 5px 10px;
+        position: absolute;
+        z-index: 1;
+        top: 94%;
+        left: 30%;
+        margin-left: -60px;
+      }
+
+      .tooltip .tooltiptext::after {
+        content: "";
+        position: absolute;
+        bottom: 100%;
+        left: 50%;
+        margin-left: -5px;
+        border-width: 7px;
+        border-style: solid;
+        border-color: transparent transparent black transparent;
+      }
+
+      #gt:hover #g{
+        visibility: visible;
+      }
+      #ft:hover #f{
+        visibility: visible;
+      }
+      #ot:hover #o{
+        visibility: visible;
+      } 
+      #ct:hover #c{
+        visibility: visible;
+      }
+      #et:hover #e{
+        visibility: visible;
+      }
+      #wt:hover #w{
+        visibility: visible;
+      }                      
+
+      span#review{
+        color: #930101;
+        position: absolute;
+        top: 25%;
+        right: 15%;
+        display: block;
+        text-transform: uppercase;
+      }
+      .checkbox{
+          font-family: Marlowe;
+          font-weight: lighter;
+          font-size: 12px;
+          cursor: pointer;
+        }
+        .checkbox > input[type="checkbox"] {
+          position: absolute;
+          opacity: 0;
+          z-index: -1;
+        }
+
+        .checkbox__icon {
+          display: inline-block;
+          color: grey;
+          border: 0.5px solid grey;
+        }
+        input[type="checkbox"]:checked ~ .checkbox__icon {
+          color: #2ac521;
+        }
+
+        .checkbox__icon:before {
+          font-family: "icons";
+          speak: none;
+        }
+
+        .icon--check:before, input[type="checkbox"]:checked ~ .checkbox__icon:before {
+          content: "\e601";
+        }
+
+        .icon--check-empty:before, .checkbox__icon:before {
+          content: "\e600";
+        }
+
+        @font-face {
+          font-family: "icons";
+          font-weight: normal;
+          font-style: normal;
+          src: url("data:application/x-font-woff;charset=utf-8;base64,d09GRk9UVE8AAAR4AAoAAAAABDAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABDRkYgAAAA9AAAAPgAAAD4fZUAVE9TLzIAAAHsAAAAYAAAAGAIIvy3Y21hcAAAAkwAAABMAAAATBpVzFhnYXNwAAACmAAAAAgAAAAIAAAAEGhlYWQAAAKgAAAANgAAADYAeswzaGhlYQAAAtgAAAAkAAAAJAPiAedobXR4AAAC/AAAABgAAAAYBQAAAG1heHAAAAMUAAAABgAAAAYABlAAbmFtZQAAAxwAAAE5AAABOUQYtNZwb3N0AAAEWAAAACAAAAAgAAMAAAEABAQAAQEBCGljb21vb24AAQIAAQA6+BwC+BsD+BgEHgoAGVP/i4seCgAZU/+LiwwHi2v4lPh0BR0AAAB8Dx0AAACBER0AAAAJHQAAAO8SAAcBAQgPERMWGyBpY29tb29uaWNvbW9vbnUwdTF1MjB1RTYwMHVFNjAxAAACAYkABAAGAQEEBwoNL2X8lA78lA78lA77lA6L+HQVi/yU+JSLi/iU/JSLBd83Fffsi4v77Pvsi4v37AUOi/h0FYv8lPiUi4v33zc3i/s3++yLi/fs9zeL398F9wCFFftN+05JzUdI9xr7GveR95FHzwUO+JQU+JQViwwKAAMCAAGQAAUAAAFMAWYAAABHAUwBZgAAAPUAGQCEAAAAAAAAAAAAAAAAAAAAARAAAAAAAAAAAAAAAAAAAAAAQAAA5gEB4P/g/+AB4AAgAAAAAQAAAAAAAAAAAAAAIAAAAAAAAgAAAAMAAAAUAAMAAQAAABQABAA4AAAACgAIAAIAAgABACDmAf/9//8AAAAAACDmAP/9//8AAf/jGgQAAwABAAAAAAAAAAAAAAABAAH//wAPAAEAAAAAAACkYCfgXw889QALAgAAAAAAz65FuwAAAADPrkW7AAD/4AIAAeAAAAAIAAIAAAAAAAAAAQAAAeD/4AAAAgAAAAAAAgAAAQAAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAAABAAAAAgAAAAIAAAAAAFAAAAYAAAAAAA4ArgABAAAAAAABAA4AAAABAAAAAAACAA4ARwABAAAAAAADAA4AJAABAAAAAAAEAA4AVQABAAAAAAAFABYADgABAAAAAAAGAAcAMgABAAAAAAAKACgAYwADAAEECQABAA4AAAADAAEECQACAA4ARwADAAEECQADAA4AJAADAAEECQAEAA4AVQADAAEECQAFABYADgADAAEECQAGAA4AOQADAAEECQAKACgAYwBpAGMAbwBtAG8AbwBuAFYAZQByAHMAaQBvAG4AIAAxAC4AMABpAGMAbwBtAG8AbwBuaWNvbW9vbgBpAGMAbwBtAG8AbwBuAFIAZQBnAHUAbABhAHIAaQBjAG8AbQBvAG8AbgBHAGUAbgBlAHIAYQB0AGUAZAAgAGIAeQAgAEkAYwBvAE0AbwBvAG4AAAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==") format("woff");
+        }
+
+      input[type=text] {
+        padding-top: 1vw;
+        width: 100%;
+        border-width: 2px;
+        border-style: solid;
+        border-color: transparent transparent grey transparent;
+      }
+      @import url(//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css);
+
+      .rating { 
+        border: none;
+        float: left;
+      }
+
+      .rating > input { display: none; } 
+
+      .rating > label { 
+        color: #ddd; 
+       float: right; 
+      }
+
+      .fa-star{
+            padding: 5px;
+      }
+      .rating > input:checked ~ label, /* show gold star when clicked */
+      .rating:not(:checked) > label:hover, /* hover current star */
+      .rating:not(:checked) > label:hover ~ label { color: #FFD700;  } /* hover previous stars in list */
+
+      .rating > input:checked + label:hover, /* hover current star when changing rating */
+      .rating > input:checked ~ label:hover,
+      .rating > label:hover ~ input:checked ~ label, /* lighten current selection */
+      .rating > input:checked ~ label:hover ~ label { color: #FFED85;  } 
+
+    /* On screens that are 992px wide or less, go from four columns to two columns */
+    @media screen and (max-width: 992px) {
+      .column {
+        width: 33.33%;
+      }
+      h6{
+        font-size: 2vw;
+      }
+     span#review{
+        top: 26%;
+        right: 15%;
+    }
+
+    /* On screens that are 600px wide or less, make the columns stack on top of each other instead of next to each other */
+    @media screen and (max-width: 600px) {
+      .column,.column01,.column1 {
+        width: 100%;
+      }
+      .col-img{
+        height: auto;
+      }
+      #column02{
+        width: 100%;
+        height: 60px;
+      }
+      #button{
+        top: 0;
+      }
+      h1{
+        font-size: 9vw;
+      }
+      h6{
+        font-size: 20px;
+      }
+
+     span#review{
+        top: 17%;
+    }
+    }
+
+  

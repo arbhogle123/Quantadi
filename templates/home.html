@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Home</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{{url_for('static', filename='css/home.css')}}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script type = "text/javascript" src = "{{url_for('static', filename='javascript/home.js')}}" ></script>
+</head>
+<body>
+  <header>
+    <img src="{{url_for('static', filename='images/quantiphi.png')}}" alt="logo">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <font color="#930101" style="font-size:30px;">{% if(msg!='')%}You voted for <b>{{msg}}</b> . Now choose next department{%endif%}</font>
+
+  </header>
+  <div class="container"> 
+    <div class="row0">
+        <div class="column01">      
+          <h1>Department: Facilities</h1><br>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc placerat urna nec quam convallis, ut mollis
+          dui vulputate. Sed id turpis vitae lacus porta aliquet lobortis quis nisi. Ut eget mollis odio.</p> 
+         </div>
+        <div class="column02" id="column02">
+          <div id="button">
+            <button id="btn" type="submit" form="deptform" value="Submit" onmouseover="newcolor(this)" onmouseout="orgcolor(this)">MOVE ON TO THE NEXT DEPARTMENT</button>
+           </div> 
+        </div>
+     </div>   
+      <b>Choose your mascot for this department</b> (hover over each mascot to know it’s meaning) 
+    <div class="row">  
+      <div class="column tooltip" id="oyster">
+        <h6 onclick="showForm('oyster')"><img class="col-img" src="{{url_for('static', filename='images/oyster.png')}}" alt="oyster"><br><label>
+        World is my Oyster</label></h6>
+        <span class="tooltiptext" id="o">Oyster is beautiful from within. It just needs to be cracked open!</span>
+      </div>
+      
+      <div class="column tooltip" id="cat">
+        <h6 onclick="showForm('cat')"><img class="col-img" src="{{url_for('static', filename='images/cat.png')}}" alt="cat"><br><label>
+        Cat’s Meow</label></h6>
+        <span class="tooltiptext" id="c">The cat is cute but when angry can tear your shin by it's claws</span>
+      </div>
+
+      <div class="column tooltip" id="whale">
+        <h6 onclick="showForm('whale')"><img class="col-img" src="{{url_for('static', filename='images/whale.png')}}" alt="whale"><br><label>
+        Whale of a time</label></h6>
+        <span class="tooltiptext" id="w">Our ambitions and mottos are as much great as the giant whale</span>
+      </div>
+      
+      <div class="column tooltip" id="elephant">
+        <h6 onclick="showForm('elephant')"><img class="col-img"src="{{url_for('static', filename='images/elephant.png')}}" alt="elephant"><br><label>
+        Elephant in the room</label></h6>
+        <span class="tooltiptext" id="e">Don't mess with the biggest terrestrial animal on earth</span>
+      </div>
+      
+      <div class="column tooltip" id="fish">
+        <h6 onclick="showForm('fish')"><img class="col-img" src="{{url_for('static', filename='images/fish.png')}}" alt="fish"><br><label>
+        Dead Fish</label></h6>
+        <span class="tooltiptext" id="f">Even if fish dies it becomes a nice treat if caught by fishermen or it gets spoiled.</span>        
+      </div>
+
+      <div class="column tooltip" id="goose">
+        <h6 onclick="showForm('goose')"><img class="col-img" src="{{url_for('static', filename='images/goose.png')}}" alt="goose"><br><label>
+        Wild Goose Chase</label></h6>
+          <span class="tooltiptext" id="g">My work/the attributes initiative is not having direction and needs greater mentorship or leadership</span>
+      </div>
+    </div>
+    <form id="deptform" action="{{url_for('backTohome')}}" method="post" name="deptform" onsubmit="return validate()">
+        <input type="hidden" id="logo-name" name="logoname" value="">
+      <div class="row1">
+        <div class="column1">
+            <b>Overall Rating for Facilities</b> (1 -lowest, 5-highest)
+            <br>
+            <fieldset class="rating" onchange="enableButton()">
+                <input type="radio" id="star4" name="rating" value="4" onclick="showReview('Outstanding')"/><label class="fa fa-star" for="star4" title="Outstanding"></label>
+                <input type="radio" id="star3" name="rating" value="3" onclick="showReview('Good')"/><label class="fa fa-star" for="star3" title="Good" ></label>
+                <input type="radio" id="star2" name="rating" value="2" onclick="showReview('Could be better')"/><label class="fa fa-star" for="star2" title="Could be better" ></label>
+                <input type="radio" id="star1" name="rating" value="1" onclick="showReview('Poor')"/><label class="fa fa-star" for="star1" title="Poor" ></label>
+            <span id="review"></span>
+            </fieldset>
+            <br><br><br>
+            <b>Share your reasons for selecting <font color="#930101" id="block"></font></b><br>
+              <label class="checkbox" for="cb1"><input type="checkbox" id="cb1" name="reason" value="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec accumsan" onchange="enableButton()"/><span class="checkbox__icon"></span> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec accumsan</label><br>
+              <label class="checkbox" for="cb2"><input type="checkbox" id="cb2" name="reason" value="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec accumsan" onchange="enableButton()"/><span class="checkbox__icon"></span> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec accumsan</label><br>
+              <label class="checkbox" for="cb3"><input type="checkbox" id="cb3" name="reason" value="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec accumsan" onchange="enableButton()"/><span class="checkbox__icon"></span> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec accumsan</label><br>
+              <label class="checkbox" for="cb4"><input type="checkbox" id="cb4" name="reason" value="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec accumsan" onchange="enableButton()"/><span class="checkbox__icon"></span> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec accumsan</label><br>
+        </div>
+        <div class="column1">
+        <b>Any more reasons?</b>  
+          <input type="text" id="rs1" name="reason1" placeholder="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec accums" onchange="enableButton()"/>
+          <input type="text" id="rs2" name="reason2" placeholder="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec accums"onchange="enableButton()"/>
+          <input type="text" id="rs3" name="reason3" placeholder="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec accums" onchange="enableButton()"/>
+          <input type="text" id="rs4" name="reason4" placeholder="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec accums" onchange="enableButton()"/>
+          <input type="text" id="rs5" name="reason5" placeholder="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec accums" onchange="enableButton()"/>
+          <input type="text" id="rs6" name="reason6" placeholder="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec accums" onchange="enableButton()"/>
+
+        </div>
+        <div class="column1">
+        <b>Suggestions</b> 
+           <textarea id="suggestions" name="suggestions" onchange="enableButton()">
+           </textarea>
+        </div>  
+      </div>
+     </form>  
+  </div>
+</body>
+</html> 
